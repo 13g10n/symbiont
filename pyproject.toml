@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "symbiont"
+version = "0.1.1"
+description = "Tiny module-service and dependency injection framework"
+authors = ["Ivan Borisenko <contact@13g10n.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+black = "^23.9.1"
+coverage = "^7.3.1"
+mypy = "^1.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.coverage.run]
+omit = [
+	"tests/*"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+	"pragma: no cover",
+	"if TYPE_CHECKING:"
+]
+
+[tool.mypy]
+strict = true

@@ -1,0 +1,30 @@
+name: Lint & Test
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Setup poetry
+        run: pip install poetry==1.2.2
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Run tests with coverage
+        run: poetry run coverage run -m pytest tests
+      - name: Output coverage results
+        run: poetry run coverage report -m >> $GITHUB_STEP_SUMMARY
