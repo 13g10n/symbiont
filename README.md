@@ -1,9 +1,11 @@
 # Symbiont
 
-![PyPI](https://img.shields.io/pypi/v/symbiont)
 ![GitHub](https://img.shields.io/github/license/13g10n/symbiont)
-![Project status](https://img.shields.io/pypi/status/symbiont)
+![PyPI](https://img.shields.io/pypi/v/symbiont)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/symbiont)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/symbiont?label=installs)
+[![Lint & Test](https://github.com/13g10n/symbiont/actions/workflows/ci.yml/badge.svg)](https://github.com/13g10n/symbiont/actions/workflows/ci.yml)
+![Codecov](https://img.shields.io/codecov/c/github/13g10n/symbiont)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Tiny module-service and dependency injection framework
