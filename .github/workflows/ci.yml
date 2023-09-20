@@ -29,8 +29,11 @@ jobs:
         run: poetry install
 
       - name: Run tests with coverage
-        run: poetry run coverage run -m pytest tests
+        run: poetry run pytest --cov=symbiont --cov-report=xml tests
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          name: Python ${{ matrix.python-version }}
+          files: ./coverage.xml
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
